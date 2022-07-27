@@ -52,4 +52,25 @@ public class DiccionarioSimpleA implements DiccionarioSimpleTDA {
 		return c;
 	}
 
+	
+	// APARTE DEL TDA ORIGINAL
+	public ConjuntoTDA Valores() {
+		ConjuntoTDA c = new ConjuntoA();
+		c.InicializarConjunto();
+		for (int i = 0; i < cant; i++) {	// recorre el array
+			c.Agregar(elementos[i].valor);	// agrega el valor al conjunto
+		}
+		return c;	// devuelve el conjunto de valores del diccionario
+	}
+
+	public String MostrarDiccionario() {
+
+		String s = "";
+		for (int i = 0; i < cant; i++) {	// recorre el array
+			s += elementos[i].clave + ": " + elementos[i].valor + "\n";	// agrega el valor al conjunto
+		}
+		return s;	// devuelve el conjunto de valores del diccionario
+	}
+
+
 }

@@ -61,4 +61,29 @@ public class DiccionarioSimpleL implements DiccionarioSimpleTDA {
 		return c;
 	}
 
+	
+	// APARTE DEL TDA ORIGINAL
+	public ConjuntoTDA Valores() {
+		ConjuntoTDA c = new ConjuntoLD();
+		c.InicializarConjunto();
+		NodoClave aux = origen;
+		while (aux != null) {
+			c.Agregar(aux.valor);
+			aux = aux.sigClave;
+		}
+		return c;	// devuelve un conjunto con los valores del diccionario
+	}
+
+	public String MostrarDiccionario() {
+
+		String s = "";
+		NodoClave aux = origen;
+		while (aux != null) {
+			s += "(" + aux.clave + "," + aux.valor + ") ";
+			aux = aux.sigClave;
+		}
+		return s;	// devuelve un string con el diccionario
+	}
+	
+	
 }

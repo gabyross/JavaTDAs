@@ -21,4 +21,5 @@ public interface GrafoTDA {
 	int PesoArista(int v1, int v2); // Grafo inicializado y existe arista (v1, v2)
 	ConjuntoTDA Vertices(); // Grafo inicializado
 	boolean ExisteArista(int v1, int v2); // Grafo inicializado y existen nodos v1, v2
+
 }

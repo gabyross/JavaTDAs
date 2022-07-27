@@ -7,4 +7,8 @@ public interface DiccionarioSimpleTDA {
 	void Eliminar(int clave);
 	int Recuperar(int clave);
 	ConjuntoTDA Claves();
+	
+	// APARTE DEL TDA ORIGINAL
+    ConjuntoTDA Valores(); // pre: diccionario inicializado 	// metodo extra para generar conjunto de valores
+	String MostrarDiccionario(); // pre: diccionario inicializado y no vacio // metodo extra para mostrar el diccionario
 }
