@@ -1,6 +1,6 @@
 package tda.colas;
 
-public class ColaLD {
+public class ColaLD implements ColaTDA{
 	class Nodo{
 		int info;
 		Nodo sig;
@@ -41,4 +41,26 @@ public class ColaLD {
 		return primero.info;
 	}
 
+	
+	// APARTE DEL TDA ORIGINAL
+	public String Mostrarcola() {	// Metodo extra para ver los elementos de la cola
+		 String cola = ""; // string que contiene la cola
+		 Nodo aux = primero;
+
+		 while (aux != null) {
+			 cola = cola + (aux.info + ","); // concatena los elementos de la cola
+			 aux = aux.sig;
+		 }
+		 cola = "[" + (cola.substring(0, cola.length() - 1)) + "]"; // quita la coma del final de la cola y lo muestra como un array
+		 return cola; // Se muestra de derecha a izquierda [primero, medio, ultimo]
+	 }
+
+
+	 public void Multidesacolar(int x) { // Metodo extra para desacolar x elementos
+
+		while (!ColaVacia() && x > 0) {	// si la cola no esta vacia
+			Desacolar();
+			x--;
+		}
+	 }
 }
