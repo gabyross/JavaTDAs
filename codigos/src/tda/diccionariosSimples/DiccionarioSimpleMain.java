@@ -1,4 +1,4 @@
-package tda.diccionarios;
+package tda.diccionariosSimples;
 
 import tda.conjuntos.ConjuntoTDA;
 import tda.pilas.PilaTDA;

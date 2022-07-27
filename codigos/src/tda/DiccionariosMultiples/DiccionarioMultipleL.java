@@ -1,4 +1,4 @@
-package tda.DiccionariosMultiples;
+package tda.diccionariosMultiples;
 import tda.conjuntos.ConjuntoLD;
 import tda.conjuntos.ConjuntoTDA;
 

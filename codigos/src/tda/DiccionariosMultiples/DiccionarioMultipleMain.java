@@ -1,7 +1,7 @@
-package tda.DiccionariosMultiples;
+package tda.diccionariosMultiples;
 
 import tda.conjuntos.ConjuntoTDA;
-import tda.diccionarios.DiccionarioSimpleTDA;
+import tda.diccionariosSimples.DiccionarioSimpleTDA;
 
 public class DiccionarioMultipleMain {
 	

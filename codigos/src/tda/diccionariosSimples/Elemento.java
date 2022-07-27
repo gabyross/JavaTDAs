@@ -1,4 +1,4 @@
-package tda.diccionarios;
+package tda.diccionariosSimples;
 
 public class Elemento {
 	int clave;

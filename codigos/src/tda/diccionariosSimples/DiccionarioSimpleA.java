@@ -1,4 +1,4 @@
-package tda.diccionarios;
+package tda.diccionariosSimples;
 import tda.conjuntos.ConjuntoA;
 import tda.conjuntos.ConjuntoTDA;
 

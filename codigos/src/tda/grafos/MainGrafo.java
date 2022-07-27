@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import tda.conjuntos.ConjuntoA;
 import tda.conjuntos.ConjuntoTDA;
-import tda.diccionarios.DiccionarioSimpleL;
-import tda.diccionarios.DiccionarioSimpleTDA;
+import tda.diccionariosSimples.DiccionarioSimpleL;
+import tda.diccionariosSimples.DiccionarioSimpleTDA;
 import arboles.abb.*;
 
 public class MainGrafo {
@@ -89,9 +89,9 @@ public class MainGrafo {
 		}
 	}
 
-	// método que recibe un grafo y devuelva su matriz de adyacencia.
-	// Por supuesto, también se debe devolver el vector que relacione nodos con
-	// índices.
+	// mï¿½todo que recibe un grafo y devuelva su matriz de adyacencia.
+	// Por supuesto, tambiï¿½n se debe devolver el vector que relacione nodos con
+	// ï¿½ndices.
 	public static int[][] Matriz(GrafoTDA grafo) {
 		ConjuntoTDA c = new ConjuntoA();
 		c.InicializarConjunto();
@@ -261,9 +261,9 @@ public class MainGrafo {
 	}
 
 	/*
-	 * Dado un Grafo G y un vértice v, calcular el conjunto de vértices
-	 * AdyacentesDobles de v. Se define que un vértice w es adyacente doble de un
-	 * vértice v, si existe otro vértice x y hay una arista que comienza en v y
+	 * Dado un Grafo G y un vï¿½rtice v, calcular el conjunto de vï¿½rtices
+	 * AdyacentesDobles de v. Se define que un vï¿½rtice w es adyacente doble de un
+	 * vï¿½rtice v, si existe otro vï¿½rtice x y hay una arista que comienza en v y
 	 * termina en x y otra que comienza en x y termina en w.
 	 */
 	public static ConjuntoTDA VerticesAdyacentesDobles(GrafoTDA g, int v) {
@@ -288,7 +288,7 @@ public class MainGrafo {
 		return verticesAdyDobles;
 	}
 
-	// Dado un vértice v de un grafo, calcular el mayor de los costos de las aristas
+	// Dado un vï¿½rtice v de un grafo, calcular el mayor de los costos de las aristas
 	// salientes.
 	public static int MayorCostoArista(GrafoTDA g, int v) {
 		int peso = 0;
@@ -306,9 +306,9 @@ public class MainGrafo {
 	}
 
 	/*
-	 * Dado un Grafo G y un vértice v, escribir un método que permita obtener el
-	 * conjunto de los Predecesores del vértice v en G. Se define que un vértice o
-	 * es predecesor de otro vértice d, si hay una arista que comienza en o y
+	 * Dado un Grafo G y un vï¿½rtice v, escribir un mï¿½todo que permita obtener el
+	 * conjunto de los Predecesores del vï¿½rtice v en G. Se define que un vï¿½rtice o
+	 * es predecesor de otro vï¿½rtice d, si hay una arista que comienza en o y
 	 * termina en d.
 	 */
 	public static ConjuntoTDA PredecesoresDeV(GrafoTDA g, int v) {
@@ -326,8 +326,8 @@ public class MainGrafo {
 	}
 
 	/*
-	 * Dado un Grafo G escribir un método que permita obtener el conjunto de los
-	 * vértices aislados en G. Se define que un vértice v es aislado si v no tiene
+	 * Dado un Grafo G escribir un mï¿½todo que permita obtener el conjunto de los
+	 * vï¿½rtices aislados en G. Se define que un vï¿½rtice v es aislado si v no tiene
 	 * aristas entrantes ni salientes.
 	 */
 	public static ConjuntoTDA VerticesAislados(GrafoTDA g) {
@@ -360,9 +360,9 @@ public class MainGrafo {
 	}
 
 	/*
-	 * Dado un Grafo G y dos vértices v1 y v2, escribir un método que permita
-	 * obtener el conjunto de todos los vértices puente entre v1 y v2. Se define que
-	 * un vértice p es puente entre dos vértices o y d, si hay una arista que
+	 * Dado un Grafo G y dos vï¿½rtices v1 y v2, escribir un mï¿½todo que permita
+	 * obtener el conjunto de todos los vï¿½rtices puente entre v1 y v2. Se define que
+	 * un vï¿½rtice p es puente entre dos vï¿½rtices o y d, si hay una arista que
 	 * comienza en o y termina en p y otra que comienza en p y termina en d.
 	 */
 	public static ConjuntoTDA VerticesPuentes(GrafoTDA g, int o, int d) {
@@ -384,8 +384,8 @@ public class MainGrafo {
 	}
 
 	/*
-	 * Dado un Grafo G y un vértice v, calcular el grado de v. Se define el grado de
-	 * un vértice v como el entero que es igual a la resta entre la cantidad de
+	 * Dado un Grafo G y un vï¿½rtice v, calcular el grado de v. Se define el grado de
+	 * un vï¿½rtice v como el entero que es igual a la resta entre la cantidad de
 	 * aristas que salen de v menos la cantidad de aristas que llegan a v.
 	 */
 	public static int CalcularGrado(GrafoTDA g, int v) {
@@ -411,11 +411,11 @@ public class MainGrafo {
 		return (aristasSalientes - aristasEntrantes);
 	}
 
-	// Escriba un método que reciba como entrada un grafo (o sea, un objeto
-	// de tipo GrafoTDA) y devuelva true si el grafo está topológicamente
+	// Escriba un mï¿½todo que reciba como entrada un grafo (o sea, un objeto
+	// de tipo GrafoTDA) y devuelva true si el grafo estï¿½ topolï¿½gicamente
 	// ordenado y false en caso contrario.
-	// Un grafo está topológicamente ordenado si toda arista se dirige
-	// siempre desde un vértice menor hacia otro mayor.
+	// Un grafo estï¿½ topolï¿½gicamente ordenado si toda arista se dirige
+	// siempre desde un vï¿½rtice menor hacia otro mayor.
 
 	public static boolean EstaTopologicamenteOrdenado(GrafoTDA grafo) {
 		ConjuntoTDA conj = grafo.Vertices();
