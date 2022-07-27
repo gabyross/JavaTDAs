@@ -15,6 +15,17 @@ public class DiccionarioSimpleMain {
 			claves.Sacar(x);
 		}
 	}
+	
+	// Metodo que muestra un diccionario simple
+	public static void MostrarDic(DiccionarioSimpleTDA dic) {
+		ConjuntoTDA claves;
+		claves = dic.Claves();
+		while (!claves.ConjuntoVacio()) {
+			int x = claves.Elegir();
+			System.out.println("Clave: " + x + " Valor: " + dic.Recuperar(x));
+			claves.Sacar(x);
+		}
+	}
 
 	public static void main(String[] args) {
 		DiccionarioSimpleTDA d = new DiccionarioSimpleA();
