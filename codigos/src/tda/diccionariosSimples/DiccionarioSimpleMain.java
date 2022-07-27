@@ -1,6 +1,7 @@
 package tda.diccionariosSimples;
 
 // ----- IMPORTACIONES -----
+
 import tda.colas.ColaTDA;
 
 //-----  IMPORTACIONES  -----
