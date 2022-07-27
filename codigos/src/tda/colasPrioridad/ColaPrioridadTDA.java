@@ -7,4 +7,7 @@ public interface ColaPrioridadTDA {
 	boolean ColaVacia();
 	int Primero();
 	int Prioridad();
+	
+	// APARTE DEL TDA ORIGINAL
+	String MostrarcolaPrioridad(); // metodo extra para ver la cola
 }

@@ -43,4 +43,18 @@ public class ColaPrioridadLD implements ColaPrioridadTDA {
 		return primero.prioridad;
 	}
 
+	
+	// APARTE DEL TDA ORIGINAL
+	
+	public String MostrarcolaPrioridad() {	// Metodo extra para ver los elementos de la cola
+		String cola = ""; // string que contiene la cola
+		NodoPrioridad aux = primero;
+		
+		while (aux != null) {
+			cola = cola + (aux.info + ","); // concatena los elementos de la cola
+			aux = aux.sig;
+		}
+		cola = "[" + (cola.substring(0, cola.length() - 1)) + "]"; // quita la coma del final de la cola y lo muestra omo un array
+		return cola; // Se muestra de derecha a izquierda [primero, medio, ultimo]
+	}
 }
