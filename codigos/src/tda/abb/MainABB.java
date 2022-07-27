@@ -1,4 +1,4 @@
-package arboles.abb;
+package tda.abb;
 import java.util.*;
 
 import tda.conjuntos.ConjuntoA;
@@ -8,8 +8,8 @@ import tda.listas.*;
 public class MainABB {
 	
 	// ESTA NO FUNCIONA
-	//  Se tiene un árbol binario de búsqueda A. Se desea listar los nodos
-	//que están desbalanceados
+	//  Se tiene un ï¿½rbol binario de bï¿½squeda A. Se desea listar los nodos
+	//que estï¿½n desbalanceados
 	public static ListaTDA NodosDesbalanceados(TDAABB a, ListaTDA l) {
 		if (!a.ArbolVacio()) {
 			if (!ArbolBalanceado(a)) {
@@ -102,10 +102,10 @@ public class MainABB {
     }
     
     
-	// Dado un elemento de valor v (que está presente en el ABB), obtener el elemento
-	//del árbol que es inmediatamente anterior (en valor).
+	// Dado un elemento de valor v (que estï¿½ presente en el ABB), obtener el elemento
+	//del ï¿½rbol que es inmediatamente anterior (en valor).
 	public static int InmediatoAnterior(TDAABB t, int v) {
-		if(t.ArbolVacio() || t.Raiz() == v) { //si el arbol esta vacío no lo encuentra y devuelve null
+		if(t.ArbolVacio() || t.Raiz() == v) { //si el arbol esta vacï¿½o no lo encuentra y devuelve null
 			return -1;
 		} 
 		// asumimos q v no es la raiz del arbol
@@ -120,7 +120,7 @@ public class MainABB {
 		}
 	}
 
-	// Contar la cantidad de elementos que están en un cierto nivel N.
+	// Contar la cantidad de elementos que estï¿½n en un cierto nivel N.
 	public static int ContarElementosEnNivel(TDAABB a, int n) {
 		if (n == 0 && !a.ArbolVacio()) {
 			return 1;
@@ -207,13 +207,13 @@ public class MainABB {
 		if (t1.ArbolVacio() || t2.ArbolVacio()) { // si alguno de los dos es vacio
 			return false;
         }
-        // Si los dos no son nulos, son similares si al subárbol derecho y el izquierdo son similares
+        // Si los dos no son nulos, son similares si al subï¿½rbol derecho y el izquierdo son similares
         return sonSimilares(t1.HijoIzq(), t2.HijoIzq()) && (sonSimilares(t1.HijoDer(), t2.HijoDer()));
         
     }
 	
 	// Saber si dos arboles son reflejo del otro, es decir, la estructura de uno
-	//se “refleja” como a través de un espejo en la del otro, tienen forma opuesta.
+	//se ï¿½reflejaï¿½ como a travï¿½s de un espejo en la del otro, tienen forma opuesta.
 	public static boolean sonReflejados(TDAABB t1, TDAABB t2) {
 		if (t1.ArbolVacio() && t2.ArbolVacio()) {
             return true;
@@ -222,7 +222,7 @@ public class MainABB {
 		if (t1.ArbolVacio() || t2.ArbolVacio()) { // si alguno de los dos es vacio
 			return false;
         }
-        // Si los dos no son nulos, son reflejo si al subárbol derecho y el izquierdo son reflejo
+        // Si los dos no son nulos, son reflejo si al subï¿½rbol derecho y el izquierdo son reflejo
         return (sonReflejados(t1.HijoIzq(), t2.HijoDer()) && (sonReflejados(t1.HijoDer(), t2.HijoIzq())));
         
     }
@@ -241,7 +241,7 @@ public class MainABB {
 	        return false;
 	    }
 	
-	//Dado un ABB de valores del tipo Entero, se quiere construir una función que
+	//Dado un ABB de valores del tipo Entero, se quiere construir una funciï¿½n que
 	//sume todos los elementos de los nodos y lo retorne.
 	public static int sumarNodos(TDAABB a){
         if(!a.ArbolVacio()){
@@ -407,8 +407,8 @@ public class MainABB {
 		return conj;
 	}
 	
-	// Se tiene almacenado en un árbol binario de búsqueda una serie de números ordenados de
-	//menor a mayor. Diseñe un procedimiento que devuelva los números pero ordenados de mayor a menor
+	// Se tiene almacenado en un ï¿½rbol binario de bï¿½squeda una serie de nï¿½meros ordenados de
+	//menor a mayor. Diseï¿½e un procedimiento que devuelva los nï¿½meros pero ordenados de mayor a menor
 	public static ArrayList<Integer> MenorAMayorInvertido(TDAABB a, ArrayList<Integer> lista) {
 		if (!a.ArbolVacio()) {
 			MenorAMayorInvertido(a.HijoDer(), lista);
@@ -419,7 +419,7 @@ public class MainABB {
 		return lista;
 	}
 		
-	// Se tiene almacenado en un árbol binario de búsqueda una serie de números ordenados. Diseñe un procedimiento que devuelva los números pero ordenados de menor a mayor
+	// Se tiene almacenado en un ï¿½rbol binario de bï¿½squeda una serie de nï¿½meros ordenados. Diseï¿½e un procedimiento que devuelva los nï¿½meros pero ordenados de menor a mayor
 	public static ArrayList<Integer> MayorAMenorInvertido(TDAABB a, ArrayList<Integer> lista) {
 		if (!a.ArbolVacio()) {
 			MayorAMenorInvertido(a.HijoIzq(), lista);
@@ -546,7 +546,7 @@ public class MainABB {
 		if (ant != v)
 			System.out.println("El inmediato anterior a " + v + " es " + ant);
 		else
-			System.out.println("No hay un inmediato anterior a " + v + " en este árbol.");*/
+			System.out.println("No hay un inmediato anterior a " + v + " en este ï¿½rbol.");*/
 		
 		ListaTDA lista = new Lista();
         lista.InicializarLista();

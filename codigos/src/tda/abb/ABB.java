@@ -1,4 +1,4 @@
-package arboles.abb;
+package tda.abb;
 
 public class ABB implements TDAABB{
 	NodoABB raiz;

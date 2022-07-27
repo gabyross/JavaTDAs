@@ -1,4 +1,4 @@
-package arboles.abb;
+package tda.abb;
 
 public class NodoABB {
 	int dato;

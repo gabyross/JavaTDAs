@@ -1,4 +1,4 @@
-package arboles.abb;
+package tda.abb;
 
 public interface TDAABB {
 	// siempre que el arbol este inicializado y no este vacio
