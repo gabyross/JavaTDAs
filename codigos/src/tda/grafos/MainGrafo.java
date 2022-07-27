@@ -6,7 +6,7 @@ import tda.conjuntos.ConjuntoA;
 import tda.conjuntos.ConjuntoTDA;
 import tda.diccionariosSimples.DiccionarioSimpleL;
 import tda.diccionariosSimples.DiccionarioSimpleTDA;
-import arboles.abb.*;
+import tda.abb.*;
 
 public class MainGrafo {
 	public static int[] OrdenarLista(int[] vector) {
