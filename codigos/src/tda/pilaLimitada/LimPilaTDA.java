@@ -24,4 +24,7 @@ public interface LimPilaTDA {
 	boolean PilaLlena(); // nos devuelve true si la pila llegó al límite de su capacidad y false en caso contrario.
 	int Tope();
 	int Capacidad(); // nos devuelve la capacidad de la pila.
+	
+	// APARTE DEL TDA ORIGINAL
+	String Mostrarpila(); // metodo extra para ver la cola
 }
