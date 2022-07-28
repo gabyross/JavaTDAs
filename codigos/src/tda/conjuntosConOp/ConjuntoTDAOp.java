@@ -1,4 +1,4 @@
-package conjuntosConOp;
+package tda.conjuntosConOp;
 
 public interface ConjuntoTDAOp {
 

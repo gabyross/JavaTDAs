@@ -1,4 +1,4 @@
-package colasLimitada;
+package tda.colasLimitada;
 
 public interface ColaLimitadaTDA {
     void InicializarCola(int x); // pre: no aplica

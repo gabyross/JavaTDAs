@@ -1,11 +1,11 @@
-package conjuntosConOp;
+package tda.conjuntosConOp;
 
 public class OperacionesConjunto implements ConjuntoTDAOp{
 	private int[] a; //el contenido del conjunto
 	private int cant; //la cantidad de elementos
 	
 	public void InicializarConjunto() {
-		a = new int[100]; // TAMAÑO MÁXIMO ACOTADO
+		a = new int[100]; // TAMANIO MAXIMO ACOTADO
 		cant = 0;
 	}
 	
@@ -21,7 +21,7 @@ public class OperacionesConjunto implements ConjuntoTDAOp{
 	}
 	
 	public int Elegir() {
-		return a[cant - 1]; //es arbitrario, podría ser cualquiera
+		return a[cant - 1]; //es arbitrario, podria ser cualquiera
 	}
 	
 	public boolean Pertenece(int x) {

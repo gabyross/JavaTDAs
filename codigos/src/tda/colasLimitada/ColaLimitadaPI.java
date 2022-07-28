@@ -1,4 +1,4 @@
-package colasLimitada;
+package tda.colasLimitada;
 
 public class ColaLimitadaPI implements ColaLimitadaTDA {
     int[] arr; // arreglo que contiene la info de la colas
