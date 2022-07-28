@@ -1,8 +1,63 @@
 package tda.listas;
 
+// ----- IMPORTACIONES ------
 import tda.listasDobles.NodoD;
 
 public class ListasMain{
+	// ----- APP ------
+	public static void main(String[] args) {
+		ListaTDA lista = new Lista();
+        lista.InicializarLista();
+        lista.AgregarAlFinal(2);
+        lista.AgregarAlFinal(1);
+        lista.AgregarAlFinal(4);
+        lista.AgregarAlFinal(3);
+        
+        //lista.mostrar();
+        
+        
+     // Ejercicio simularo
+        Nodo uno = new Nodo();
+        Nodo dos = new Nodo();
+        Nodo tres = new Nodo();
+        Nodo cuatro = new Nodo();
+
+        //System.out.println(uno.dato);
+
+        uno.dato = 2;
+        uno.sig = dos;
+        dos.dato = 2;
+        dos.sig = tres;
+        tres.dato = 2;
+        tres.sig = cuatro;
+        cuatro.dato = 2;
+        cuatro.sig = null;
+
+        System.out.println(SumaRec(uno));
+        //imprimirListaNodo(generarLista(uno, 2));
+
+        /*// Ejercicio simularo
+        Nodo uno = new Nodo();
+        Nodo dos = new Nodo();
+        Nodo tres = new Nodo();
+        Nodo cuatro = new Nodo();
+        uno.dato = 1;
+        uno.sig = dos;
+        dos.dato = 2;
+        dos.sig = tres;
+        tres.dato = 3;
+        tres.sig = cuatro;
+        cuatro.dato = 4;
+        cuatro.sig = uno;
+        imprimirListaCiclica(uno);*/
+
+	}
+	
+	
+	
+	
+	
+	// ----- FUNCIONES ----
 	// crear una funcion para generar una lista enlazada que tome como párametro un  origen y un numero entero x ---------------
     // el metodo debe agregar un nodo con valor 0 antes del nodo que contenga el numero entero x, y agregar un nodo al final con
     // valor = cantidad de veces que se encontro el numero x en la lista (Simulacro 12 Ej 3)
@@ -118,54 +173,6 @@ public class ListasMain{
 	        }
 
 	    }
-
-	}
-
-	public static void main(String[] args) {
-		ListaTDA lista = new Lista();
-        lista.InicializarLista();
-        lista.AgregarAlFinal(2);
-        lista.AgregarAlFinal(1);
-        lista.AgregarAlFinal(4);
-        lista.AgregarAlFinal(3);
-        
-        //lista.mostrar();
-        
-        
-     // Ejercicio simularo
-        Nodo uno = new Nodo();
-        Nodo dos = new Nodo();
-        Nodo tres = new Nodo();
-        Nodo cuatro = new Nodo();
-
-        //System.out.println(uno.dato);
-
-        uno.dato = 2;
-        uno.sig = dos;
-        dos.dato = 2;
-        dos.sig = tres;
-        tres.dato = 2;
-        tres.sig = cuatro;
-        cuatro.dato = 2;
-        cuatro.sig = null;
-
-        System.out.println(SumaRec(uno));
-        //imprimirListaNodo(generarLista(uno, 2));
-
-        /*// Ejercicio simularo
-        Nodo uno = new Nodo();
-        Nodo dos = new Nodo();
-        Nodo tres = new Nodo();
-        Nodo cuatro = new Nodo();
-        uno.dato = 1;
-        uno.sig = dos;
-        dos.dato = 2;
-        dos.sig = tres;
-        tres.dato = 3;
-        tres.sig = cuatro;
-        cuatro.dato = 4;
-        cuatro.sig = uno;
-        imprimirListaCiclica(uno);*/
 
 	}
 
