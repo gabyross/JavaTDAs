@@ -1,6 +1,11 @@
 package tda.listas;
 
-// ----- IMPORTACIONES ------
+
+//----- IMPORTACIONES ------
+
+import tda.abb.*;
+import tda.colas.ColaLD;
+import tda.colas.ColaTDA;
 import tda.listasDobles.NodoD;
 
 public class ListasMain{
@@ -51,6 +56,75 @@ public class ListasMain{
         cuatro.sig = uno;
         imprimirListaCiclica(uno);*/
 
+        // -----------------------------------------------------
+     // crear objeto lista
+        /*listaEnlazada lista = new listaEnlazada();
+        lista.agregarF(2);
+        lista.agregarF(4);
+        lista.agregarF(8);
+        lista.agregarF(6);
+        lista.agregarF(7);
+        lista.agregarF(1);
+        
+        lista.mostrar();
+        
+        lista.ordenar();
+        lista.mostrar();*/
+
+        // Ejercicio simularo
+        Nodo uno1 = new Nodo();
+        Nodo dos1 = new Nodo();
+        Nodo tres1 = new Nodo();
+
+        Nodo cuatro1 = new Nodo();
+        Nodo cinco = new Nodo();
+        Nodo seis = new Nodo();
+
+        System.out.println(uno1);
+
+        uno1.dato = 1;
+        uno1.sig = dos1;
+        dos1.dato = 2;
+        dos1.sig = tres1;
+        tres1.dato = 3;
+        tres1.sig = null;
+
+        imprimirListaNodo(uno1);
+
+
+        cuatro1.dato = 4;
+        cuatro1.sig = cinco;
+        cinco.dato = 5;
+        cinco.sig = seis;
+        seis.dato = 6;
+        seis.sig = null;
+
+        
+        imprimirListaNodo(cuatro1);
+
+        
+        //listasEnlazadasTDA lista = MezclaABB(uno, cuatro);
+
+        //lista.mostrar();
+
+        
+
+        imprimirListaNodo(Mezcla(uno1, cuatro1));
+
+        /*// Ejercicio simularo
+        Nodo uno = new Nodo();
+        Nodo dos = new Nodo();
+        Nodo tres = new Nodo();
+        Nodo cuatro = new Nodo();
+        uno.dato = 1;
+        uno.sig = dos;
+        dos.dato = 2;
+        dos.sig = tres;
+        tres.dato = 3;
+        tres.sig = cuatro;
+        cuatro.dato = 4;
+        cuatro.sig = uno;
+        imprimirListaCiclica(uno);*/
 	}
 	
 	
@@ -102,6 +176,7 @@ public class ListasMain{
     }
 
 
+    
     // crear funcion para imprimir lista con nodo origen ---------------
     public static void imprimirListaNodo(Nodo origen) {
 
@@ -118,6 +193,8 @@ public class ListasMain{
         System.out.println("-");
     }
 
+    
+    
     // crear una funcion para imprimir y agregar una lista enlazada ciclica (Simulacro 5 Ej2) ---------------
     public static void imprimirListaCiclica(Nodo origen) {
 
@@ -131,6 +208,8 @@ public class ListasMain{
         System.out.println(aux.dato); // imprime el dato del ultimo nodo  
     }
 
+    
+    
     public static void agregarListaCiclica(Nodo origen) { // agrega un nodo al final de la lista
 
         Nodo nuevo = new Nodo();  // nuevo nodo
@@ -139,6 +218,8 @@ public class ListasMain{
         nuevo.sig = origen.sig; // el nuevo nodo apunta al nodo siguiente del origen
         origen.sig = nuevo;  // el nodo origen apunta al nuevo nodo
     }
+    
+    
 
     // funcion para concatenar dos listas enlazadas - Ejercicio3 Simulacro 11 Parcial 1 ---------------
     public static Nodo concatenarListas(Nodo origen1, Nodo origen2) {
@@ -154,6 +235,8 @@ public class ListasMain{
         aux1.sig = aux2;    // el ultimo nodo de la lista 1 apunta al primer nodo de la lista 2
         return origen1;
     }
+    
+    
     
 	// funcion para sumar los nodos de una lista de forma recursiva - Ejercicio 1 Recuperatorio Parcial 1 ---------------
 	public static int SumaRec(Nodo cabeza) {
@@ -176,4 +259,100 @@ public class ListasMain{
 
 	}
 
+	
+	
+	// funcion para sumar los nodos de una lista de forma recursiva
+    public static int sumarNodos(Nodo origen) {
+        if (origen == null) {   // si el nodo es null, retorno -1 (lista vacia)
+            return -1;
+        } else if (origen.sig == null) {   // si el nodo es el ultimo, retorno el dato del nodo (o si hay un solo nodo)
+            return origen.dato;
+        } else {    // si no es el ultimo, sumo el dato del nodo con la funcion de sumar nodos
+            return origen.dato + sumarNodos(origen.sig);
+        }
+    }
+
+    
+    
+    // funcion para ordenar de manera ascendente una lista de forma recursiva
+    public static Nodo ordenarLista(Nodo origen) {
+        if (origen == null) {   // si el nodo es null, retorno null (lista vacia)
+            return null;
+        } else if (origen.sig == null) {   // si el nodo es el ultimo, retorno el nodo (o si hay un solo nodo)
+            return origen;
+        } else {    // si no es el ultimo, llamo a la funcion de ordenar lista con el nodo siguiente
+            origen.sig = ordenarLista(origen.sig);
+            if (origen.dato > origen.sig.dato) {   // si el dato del nodo es mayor al dato del nodo siguiente, intercambio los datos
+                int aux = origen.dato;
+                origen.dato = origen.sig.dato;
+                origen.sig.dato = aux;
+            }
+            return origen;
+        }
+    }
+
+    
+    
+    // funcion para concatenar 2 listas y ordenarlas de menor a mayor (Mezcla)
+    public static Nodo Mezcla(Nodo origen1, Nodo origen2) {
+
+        concatenarListas(origen1, origen2); // concateno las listas
+
+        ordenarLista(origen1); // ordeno la lista
+
+        return origen1;
+    }
+
+
+    // funcion para pasar una lista a un ABB y insertar el recorrido inorden en una lista enlazada - Simulacro 4 Final ---------------
+    public static ListaTDA MezclaABB(Nodo origen1, Nodo origen2) {
+
+        Nodo aux = new Nodo(); // auxiliar para recorrer la lista
+        aux = origen1;
+
+        ABB arbol = new ABB(); // arbol para insertar los nodos de la lista en orden
+        arbol.InicializarArbol();
+        
+        while (aux.sig != null) { // inserta los nodos de la lista en orden en el arbol
+            arbol.AgregarElem(aux.dato);
+            aux = aux.sig;
+        }
+        arbol.AgregarElem(aux.dato);
+
+        aux = origen2; // auxiliar para recorrer la lista 2
+
+        while (aux.sig != null) { // inserta los nodos de la lista en orden en el arbol
+            arbol.AgregarElem(aux.dato);
+            System.out.println("se agrego el nodo: " + aux.dato);
+            aux = aux.sig;
+        }
+        arbol.AgregarElem(aux.dato);
+
+        ColaTDA cola = new ColaLD(); // cola para recorrer el arbol en inorden
+        cola.InicializarCola();
+
+        InOrden(arbol, cola);   // recorre el arbol en inorden y lo inserta en la cola
+
+        System.out.println(cola.Mostrarcola()); // muestra la cola
+        
+        // agregar los elementos de la cola a la lista enlazada
+        ListaTDA melange = new Lista();
+        melange.InicializarLista();
+
+        while (!cola.ColaVacia()) {
+            melange.AgregarAlFinal(cola.Primero());
+            cola.Desacolar();
+        }
+
+        return melange;
+    }
+
+    // recorrido INORDEN del ABB (Agregando los elementos en la cola) ---------------
+    public static void InOrden(TDAABB arbol, ColaTDA cola) {
+        if (!arbol.ArbolVacio()) {
+            InOrden(arbol.HijoIzq(), cola);
+            cola.Acolar(arbol.Raiz());
+            InOrden(arbol.HijoDer(), cola);
+        }
+    }
 }
