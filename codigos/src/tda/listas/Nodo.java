@@ -4,6 +4,6 @@ package tda.listas;
  * Es conveniente, por razones de seguridad, que el campo sig del último nodo de la cadena sea null.
  */
 public class Nodo {
-	int dato;
-	Nodo sig;
+	public int dato;
+	public Nodo sig;
 }
