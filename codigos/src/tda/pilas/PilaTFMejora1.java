@@ -1,4 +1,4 @@
-package pilas;
+package tda.pilas;
 
 public class PilaTFMejora1 implements PilaTDA{
     int[] arr;
