@@ -6,4 +6,7 @@ public interface PilaTDA {
 	void Desapilar();
 	boolean PilaVacia();
 	int Tope();
+	
+	// APARTE DEL TDA ORIGINAL
+	String Mostrarpila(); // metodo extra para ver la cola
 }
