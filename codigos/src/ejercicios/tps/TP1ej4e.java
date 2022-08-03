@@ -1,5 +1,5 @@
 
-//Determinar si una Cola es capicúa o no
+//Determinar si una Cola es capicï¿½a o no
 package ejercicios.tps;
 
 import tda.colas.ColaPU;
@@ -49,9 +49,9 @@ public class TP1ej4e {
 		origen.Acolar(2);
 		origen.Acolar(3);
 		if(Capicua(origen)) {
-			System.out.print("Es capicúa!");
+			System.out.print("Es capicua!");
 		} else {
-			System.out.print("NO es capicúa!");
+			System.out.print("NO es capicua!");
 		}
 		
 
